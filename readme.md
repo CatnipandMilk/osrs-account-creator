@@ -6,33 +6,30 @@
 
 Old School RuneScape is a massively multiplayer online role-playing game (MMORPG).
 
-This project allows you to create oldschool runescape account on OSRS. This won't verify the email, just solve all the anti bot related matters.
+This project allows you to create accounts on OSRS. This doesn't verify emails, just solves all the anti-bot-related matters.
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/pim97/osrs-account-creator.git`
+1. Clone the repository: `git clone https://github.com/CatnipandMilk/osrs-account-creator.git`
 2. Install the dependencies: `npm install`
 
 ## Usage
 
 1. Replace the following details with your own details in the script file (`script.js`):
    - API_KEY_HERE: Your Scrappey API key found at https://app.scrappey.com/#/ to solve Cloudflare
-   - EMAIL: Email you want to register with
-   - PASSWORD: password you want to register with
+   - EMAILS.TXT: fill this in with the emails you want to use for accounts
+
 2. Run the script: `node create.js`
 
-## Contributing
 
-Contributions are welcome! Please follow these guidelines when contributing to the project.
 
-## License
+## Updates
+1. Modified the code to pull emails from emails.txt for multiple accounts.
+2. Modified the code to write the created accounts to accounts.xlsv
+3. Should remove the used emails from emails.txt after it creates the account.
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
 
-## Contact
 
-- Author: Pim97
-- GitHub: [Your GitHub Profile](https://github.com/pim97/)
 
 ## Legal and Ethical Considerations
 
