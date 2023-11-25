@@ -1,7 +1,7 @@
 {
-  "name": "osrs-acc-creator-scrappey",
-  "version": "1.0.0",
-  "description": "",
+  "name": "Guthixs-Invitation",
+  "version": "2.0.0",
+  "description": "Invite humans to the world of Gielinor",
   "type": "module",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.6.2",
+    "fs": "^0.0.1-security",
     "qs": "^6.11.2",
-    "scrappey-wrapper": "^1.0.5"
+    "scrappey-wrapper": "^1.0.8",
+    "xlsx": "^0.18.5"
   }
 }
