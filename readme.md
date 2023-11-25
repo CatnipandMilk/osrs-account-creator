@@ -41,8 +41,10 @@ This project allows you to create accounts on OSRS. This doesn't verify emails, 
    
 
 ## Guthix doesn't demand 10%
-but your tithes are welcome:
-[BTC] 18fZ95BDaEUVvw5wCzHxJ4HMJGeSeRd3fg
+but your tithes are welcome: 
+
+[BTC] 18fZ95BDaEUVvw5wCzHxJ4HMJGeSeRd3fg 
+
 [Doge] DRzSHGoofnpm6rr19MRx9bNR7aPHWfv3qc
 
 
