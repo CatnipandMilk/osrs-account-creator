@@ -1,4 +1,6 @@
-# OSRS account creator
+# Guthix's Invitation
+
+In the First Age, Guthix arrived in Gielenor. He sent out an invitation to beings from other worlds to come. Among those groups were human beings.
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
@@ -24,15 +26,33 @@ This project allows you to create accounts on OSRS. This doesn't verify emails, 
 
 
 ## Updates
-1. Modified the code to pull emails from emails.txt for multiple accounts.
-2. Modified the code to write the created accounts to accounts.xlsv
-3. Should remove the used emails from emails.txt after it creates the account.
+1. Pull emails from emails.txt for multiple accounts.
+2. Write the created accounts to accounts.txt and remove the used email.
 
 
+## Future Updates
+1. Include a UserName/eMail Generator
+2. Clean up console posts
+3. Better error handling
+4. Full bundling of components
+5. Assemble as a packaged exe with GUI
+6. ????
+7. Profit
+   
+
+## Guthix doesn't demand 10%
+but your tithes are welcome:
+[BTC] 18fZ95BDaEUVvw5wCzHxJ4HMJGeSeRd3fg
+[Doge] DRzSHGoofnpm6rr19MRx9bNR7aPHWfv3qc
 
 
 ## Legal and Ethical Considerations
 
 Remember to adhere to legal and ethical guidelines when scraping websites. Always respect the website's terms of service and scraping policies. Ensure your use of the scraped data complies with applicable laws and regulations, especially regarding data privacy and intellectual property rights. 🚫⚖️
 
+Ash, please forgive me. I hold the same curse of giving the people what they want.
+Jagex, please hire me.
+
 *Disclaimer: This web scraping guide is intended solely for educational and informational purposes. Please use web scraping responsibly and in accordance with the terms and conditions of the target website.* 📚🔍
+
+
