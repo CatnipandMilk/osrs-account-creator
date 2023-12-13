@@ -1,13 +1,13 @@
 {
   "name": "Guthixs-Invitation",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Invite humans to the world of Gielinor",
   "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "CatnipandMilk",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.6.2",
