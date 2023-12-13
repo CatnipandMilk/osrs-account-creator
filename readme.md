@@ -1,6 +1,6 @@
 # Guthix's Invitation
 
-In the First Age, Guthix arrived in Gielenor. He sent out an invitation to beings from other worlds to come. Among those groups were human beings.
+In the First Age, Guthix arrived in Gielenor. He invited beings from other worlds to come. Among those groups were human beings.
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
@@ -8,7 +8,7 @@ In the First Age, Guthix arrived in Gielenor. He sent out an invitation to being
 
 Old School RuneScape is a massively multiplayer online role-playing game (MMORPG).
 
-This project allows you to create accounts on OSRS. This doesn't verify emails, just solves all the anti-bot-related matters.
+This project allows you to create accounts on OSRS. This doesn't verify emails, it just solves all the anti-bot related matters.
 
 ## Installation
 
@@ -17,9 +17,9 @@ This project allows you to create accounts on OSRS. This doesn't verify emails, 
 
 ## Usage
 
-1. Replace the following details with your own details in the script file (`script.js`):
+1. Replace the following with your details in the script file (`script.js`):
    - API_KEY_HERE: Your Scrappey API key found at https://app.scrappey.com/#/ to solve Cloudflare
-   - EMAILS.TXT: fill this in with the emails you want to use for accounts
+   - emails.txt: Fill this in with the emails you want to use for accounts
 
 2. Run the script: `node create.js`
 
@@ -28,16 +28,19 @@ This project allows you to create accounts on OSRS. This doesn't verify emails, 
 ## Updates
 1. Pull emails from emails.txt for multiple accounts.
 2. Write the created accounts to accounts.txt and remove the used email.
+3. Fixed successful creation confirmation.
+4. Added Python Account list splitter.
 
 
 ## Future Updates
-1. Include a UserName/eMail Generator
+1. Include a UserName/Email Generator (currently separate)
 2. Clean up console posts
 3. Better error handling
 4. Full bundling of components
-5. Assemble as a packaged exe with GUI
-6. ????
-7. Profit
+5. Multi-threading
+6. Assemble as a packaged exe with GUI
+7. ????
+8. Profit
    
 
 ## Guthix doesn't demand 10%
@@ -50,11 +53,11 @@ but your tithes are welcome:
 
 ## Legal and Ethical Considerations
 
-Remember to adhere to legal and ethical guidelines when scraping websites. Always respect the website's terms of service and scraping policies. Ensure your use of the scraped data complies with applicable laws and regulations, especially regarding data privacy and intellectual property rights. 🚫⚖️
+Remember to adhere to legal and ethical guidelines when scraping websites. Always respect the website's terms of service and scraping policies. Please make sure your use of the scraped data meets the applicable laws and regulations, especially regarding data privacy and intellectual property rights. 🚫⚖️
 
-Ash, please forgive me. I hold the same curse of giving the people what they want.
+Mod Ash, please forgive me. I hold the same curse of giving the people what they want.
 Jagex, please hire me.
 
-*Disclaimer: This web scraping guide is intended solely for educational and informational purposes. Please use web scraping responsibly and in accordance with the terms and conditions of the target website.* 📚🔍
+*Disclaimer: This web scraping guide is intended solely for educational and informational purposes. Please use web scraping responsibly and follow the terms and conditions of target websites.* 📚🔍
 
 
