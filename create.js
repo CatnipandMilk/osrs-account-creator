@@ -2,33 +2,17 @@ import Scrappey from "scrappey-wrapper";
 import qs from "qs";
 import { readFileSync, writeFileSync } from "fs";
 
-/**
- * Get your API key on Scrappey.com
- */
-const scrappey = new Scrappey("YOUR API KEY HERE");
-
-/**
- * Fill in the details to register with OSRS
- */
 const MIN_PASSWORD_LENGTH = 7;
 const MAX_PASSWORD_LENGTH = 12;
-const DAY = '06';
-const MONTH = '06';
-const YEAR = '2006';
+const DAY = '01';
+const MONTH = '01';
+const YEAR = '2001';
 
-/**
- * Text file path
- */
-const textFilePath = 'accounts.txt'; // This is where it will save the accounts
+const textFilePath = 'accounts.txt'; // This 
+const emailsFilePath = 'emails.txt';
 
-/**
- * Read email addresses from the file
- */
-let emails = readFileSync('emails.txt', 'utf8').split('\n').map(email => email.trim());
+let emails = readFileSync(emailsFilePath, 'utf8').split('\n').map(email => email.trim());
 
-/**
- * Generate a random password within the specified length range
- */
 function generateRandomPassword() {
     const length = Math.floor(Math.random() * (MAX_PASSWORD_LENGTH - MIN_PASSWORD_LENGTH + 1)) + MIN_PASSWORD_LENGTH;
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -40,27 +24,17 @@ function generateRandomPassword() {
     return password;
 }
 
-/**
- * Write account details to the text file
- */
 function writeToTextFile(data) {
     const textData = data.map(entry => `${entry.Email}:${entry.Password}`).join('\n');
     writeFileSync(textFilePath, textData + '\n', { flag: 'a', encoding: 'utf8' });
 }
 
-/**
- * Remove used email from emails.txt
- */
 function removeUsedEmail(email) {
     emails = emails.filter(existingEmail => existingEmail !== email);
-    writeFileSync('emails.txt', emails.join('\n'), 'utf8');
-    console.log(`Removed email ${email} from emails.txt`);
+    writeFileSync(emailsFilePath, emails.join('\n'), 'utf8');
+    console.log(`Removed email ${email} from ${emailsFilePath}`);
 }
 
-/**
- * This will only send the GET request, get the CSRF, and then send the POST request
- * All captchas are solved automatically, including Incapsula anti-bot and turnstile using Scrappey.
- */
 async function run() {
     for (const email of emails) {
         let retryCount = 0;
@@ -68,6 +42,8 @@ async function run() {
 
         while (retryCount < 3 && !success) {
             try {
+                const scrappey = new Scrappey("YOUR-API-KEY-HERE");
+
                 const password = generateRandomPassword();
 
                 const createSession = await scrappey.createSession();
@@ -103,28 +79,38 @@ async function run() {
                     postData: qs.stringify(postData),
                 });
 
-                console.log(`Response for email ${email}:`);
-                console.log(post.solution.response); // Log the entire response for further analysis
+                const postSolution = post.solution;
 
-                console.log(`Inner Text: ${post.solution.innerText}`);
-                console.log(`Title: ${post.solution.title}`);
-
-                // Log the account details to the text file
-                const accountDetails = {
-                    Email: email,
-                    Password: password,
-                };
-                writeToTextFile([accountDetails]);
-
-                // Remove used email from emails.txt
-                removeUsedEmail(email);
-
-                await scrappey.destroySession(session);
-
-                success = true; // Mark the operation as successful to exit the retry loop
+                if (postSolution && postSolution.innerText && postSolution.innerText.includes("You can now begin your adventure with your new account")) {
+                    // Account creation was successful
+                    console.log(`Account for email ${email} was created successfully.`);
+                    const accountDetails = {
+                        Email: email,
+                        Password: password,
+                    };
+                    writeToTextFile([accountDetails]); // Writes the account information to accounts.txt
+                    removeUsedEmail(email); // Removes the used email from emails.txt
+                    await scrappey.destroySession(session);
+                    success = true;
+                } else if (postSolution && postSolution.innerText && postSolution.innerText.includes("Recover this account")) {
+                    // Email has already been registered, skip and move on to the next email
+                    console.error(`Email ${email} has already been registered. Skipping.`);
+                    removeUsedEmail(email); // Removes the used email from emails.txt
+                    success = true; // Mark as success to skip to the next email
+                } else {
+                    // Account creation failed
+                    console.error(`Account creation for email ${email} failed. Retrying...`);
+                    retryCount += 1;
+                    if (retryCount === 3) {
+                        console.log(`Something went wrong with ${email}.`);
+                    }
+                }
             } catch (error) {
                 console.error(`Error for email ${email}:`, error.message);
                 retryCount += 1;
+                if (retryCount === 3) {
+                    console.log(`General unknown error. Try checking your API token balance.`);
+                }
             }
         }
 
