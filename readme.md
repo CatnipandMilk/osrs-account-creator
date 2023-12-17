@@ -18,7 +18,7 @@ This project allows you to create accounts on OSRS. This doesn't verify emails, 
 ## Usage
 
 1. Replace the following with your details in the script file (`script.js`):
-   - API_KEY_HERE: Your Scrappey API key found at https://app.scrappey.com/#/ to solve Cloudflare
+   - API_KEY_HERE: Your Scrappey API key found at https://app.scrappey.com/#/catnip to solve Cloudflare
    - emails.txt: Fill this in with the emails you want to use for accounts
 
 2. Run the script: `node create.js`
