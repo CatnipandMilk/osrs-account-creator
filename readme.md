@@ -9,6 +9,7 @@ In the First Age, Guthix arrived in Gielenor. He invited beings from other world
 Old School RuneScape is a massively multiplayer online role-playing game (MMORPG).
 
 This project allows you to create accounts on OSRS. This doesn't verify emails, it just solves all the anti-bot related matters.
+If you want to verify emails, use a catch-all/wildcard email service to forward emails to Outlook. Access the Outlook API to read emails and click links or send requests to the links.
 
 ## Installation
 
