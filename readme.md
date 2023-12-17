@@ -16,14 +16,16 @@ This project allows you to create accounts on OSRS. This doesn't verify emails, 
 2. Install the dependencies: `npm install`
 
 ## Usage
-
-1. Replace the following with your details in the script file (`script.js`):
-   - API_KEY_HERE: Your Scrappey API key found at https://app.scrappey.com/#/catnip to solve Cloudflare
+1. Sign up for a Scrappey account here
+2. Verify your email for more free scrapes
+3. Replace the following with your details in the script file (`script.js`):
+   - API_KEY_HERE: Your Scrappey API key found at https://app.scrappey.com/#/ to solve Cloudflare
    - emails.txt: Fill this in with the emails you want to use for accounts
-
-2. Run the script: `node create.js`
-
-
+4. Run the script: `node create.js`
+5. ????
+6. Profit
+7. Support your local NPR radio station
+8. Star this repo <3
 
 ## Updates
 1. Pull emails from emails.txt for multiple accounts.
@@ -39,8 +41,6 @@ This project allows you to create accounts on OSRS. This doesn't verify emails, 
 4. Full bundling of components
 5. Multi-threading
 6. Assemble as a packaged exe with GUI
-7. ????
-8. Profit
    
 
 ## Guthix doesn't demand 10%
