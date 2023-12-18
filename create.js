@@ -1,3 +1,5 @@
+// Please do not abuse this tool. Please consider supporting me in developing this tool further.
+
 import Scrappey from "scrappey-wrapper";
 import qs from "qs";
 import { readFileSync, writeFileSync } from "fs";
@@ -83,7 +85,7 @@ async function run() {
 
                 if (postSolution && postSolution.innerText && postSolution.innerText.includes("You can now begin your adventure with your new account")) {
                     // Account creation was successful
-                    console.log(`Account for email ${email} was created successfully.`);
+                    console.log(`Guthix provides! Account for email ${email} was created successfully.`);
                     const accountDetails = {
                         Email: email,
                         Password: password,
