@@ -17,7 +17,7 @@ If you want to verify emails, use a catch-all/wildcard email service to forward 
 2. Install the dependencies: `npm install`
 
 ## Usage
-1. Sign up for a Scrappey account here
+1. Sign up for a Scrappey account here: https://scrappey.com/?via=catnip
 2. Verify your email for more free scrapes
 3. Replace the following with your details in the script file (`script.js`):
    - API_KEY_HERE: Your Scrappey API key found at https://app.scrappey.com/#/ to solve Cloudflare
